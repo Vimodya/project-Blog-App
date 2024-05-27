@@ -15,7 +15,7 @@ function Blog() {
         />
         <div className="text-[#192841] text-3xl font-bold ">Me and Beach</div>
         <div className="text-[#192841] text-xl font-light ">
-          <Link href={""}>Read More</Link>
+          <Link href="/Singleblog">Read More</Link>
         </div>
       </div>
     </div>
