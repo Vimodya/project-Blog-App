@@ -1,17 +1,27 @@
 import React from "react";
+import Image from "next/image";
+import Footer from "./../../components/footer/Footer";
 
-export default function page() {
+function page() {
   return (
-    <div>
-      <div className="flex flex-row justify-around mt-48">
+    <div className="flex flex-col">
+      <div className="flex flex-row justify-around mt-8 mb-8  p-12">
         <div className="flex flex-col w-96">
           <div className="text-[#192841] text-6xl font-bold w-72">
-            Want to contact us ?
+            Creative Thoughts Agency
           </div>
           <div className="mt-4 text-[#192841] ">
-            Have a simple question ? We have the best answer.
+            Here is the biggest collection of the best creative thoughts, just
+            find the thoughts for your business.
           </div>
-
+          <div className="mt-8 flex flex-row justify-between">
+            <button className="bg-blue-300 text-black px-4 py-2 rounded-lg">
+              Learn More
+            </button>
+            <button className="bg-white text-black px-4 py-2 rounded-lg">
+              Contact
+            </button>
+          </div>
           <div className="flex flex-row justify-between mt-8">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -53,35 +63,18 @@ export default function page() {
           </div>
         </div>
         <div>
-          <form>
-            <div className="flex flex-col">
-              <div className="text-[#192841] text-2xl font-bold">
-                Get in touch
-              </div>
-              <div className="flex flex-col space-y-4 mt-4">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  className="bg-gray-300 rounded-lg px-4 py-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Email"
-                  className="bg-gray-300 rounded-lg px-4 py-2"
-                />
-                <input
-                  type="text"
-                  placeholder="Message"
-                  className="bg-gray-300 rounded-lg px-4 py-2"
-                />
-                <button className="bg-blue-300 text-black px-4 py-2 rounded-lg">
-                  Send
-                </button>
-              </div>
-            </div>
-          </form>
+          <Image
+            src="/homeImage.avif"
+            alt="home"
+            width={700}
+            height={500}
+            className="rounded-lg "
+          />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
+
+export default page;

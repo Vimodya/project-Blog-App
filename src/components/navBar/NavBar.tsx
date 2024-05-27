@@ -8,10 +8,10 @@ export default function NavBar() {
   return (
     <div>
       {/* <div className="flex flex-row  justify-between"> */}
-      <div className="flex flex-row justify-between mx-8 mt-8">
+      <div className="flex flex-row justify-between mx-8 mt-8 ">
         <div className="text-[#192841] font-bold ">Logo</div>
         <div className="text-[#192841] space-x-4 hidden md:flex lg:flex ">
-          <Link href="/" className="hover:text-yellow-500">
+          <Link href="/home" className="hover:text-yellow-500">
             Home
           </Link>
           <Link href="/about" className="hover:text-yellow-500">
@@ -22,6 +22,9 @@ export default function NavBar() {
           </Link>
           <Link href="/blogs" className="hover:text-yellow-500">
             Blogs
+          </Link>
+          <Link href="/login" className="hover:text-yellow-500">
+            LogIn
           </Link>
         </div>
       </div>
