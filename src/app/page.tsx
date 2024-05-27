@@ -5,7 +5,7 @@ import Footer from "../components/footer/Footer";
 const Home = () => {
   return (
     <div className="flex flex-col">
-      <div className="flex flex-row justify-around mt-24 mb-8">
+      <div className="flex flex-row justify-around mt-8 mb-8  p-12">
         <div className="flex flex-col w-96">
           <div className="text-[#192841] text-6xl font-bold w-72">
             Creative Thoughts Agency
@@ -27,7 +27,7 @@ const Home = () => {
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
-              fill="white"
+              fill="black"
               viewBox="0 0 16 16"
             >
               <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z" />
@@ -37,7 +37,7 @@ const Home = () => {
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
-              fill="white"
+              fill="black"
               viewBox="0 0 16 16"
             >
               <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z" />
@@ -47,7 +47,7 @@ const Home = () => {
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
-              fill="white"
+              fill="black"
               viewBox="0 0 16 16"
             >
               <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z" />
@@ -57,7 +57,7 @@ const Home = () => {
               xmlns="http://www.w3.org/2000/svg"
               width="16"
               height="16"
-              fill="white"
+              fill="black"
               viewBox="0 0 16 16"
             >
               <path d="M5.5 2A3.5 3.5 0 0 0 2 5.5v5A3.5 3.5 0 0 0 5.5 14h5a3.5 3.5 0 0 0 3.5-3.5V8a.5.5 0 0 1 1 0v2.5a4.5 4.5 0 0 1-4.5 4.5h-5A4.5 4.5 0 0 1 1 10.5v-5A4.5 4.5 0 0 1 5.5 1H8a.5.5 0 0 1 0 1z" />
