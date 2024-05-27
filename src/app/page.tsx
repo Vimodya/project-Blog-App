@@ -5,10 +5,10 @@ const Home = () => {
   return (
     <div className="flex flex-row justify-around mt-24 mb-8">
       <div className="flex flex-col w-96">
-        <div className="text-white text-6xl font-bold w-72">
+        <div className="text-[#192841] text-6xl font-bold w-72">
           Creative Thoughts Agency
         </div>
-        <div className="mt-4 text-white ">
+        <div className="mt-4 text-[#192841] ">
           Here is the biggest collection of the best creative thoughts, just
           find the thoughts for your business.
         </div>
@@ -65,9 +65,9 @@ const Home = () => {
       </div>
       <div>
         <Image
-          src="/home.png"
+          src="/homeImage.avif"
           alt="home"
-          width={500}
+          width={700}
           height={500}
           className="rounded-lg "
         />

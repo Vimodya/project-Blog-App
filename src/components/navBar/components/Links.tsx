@@ -22,7 +22,7 @@ export default function Links() {
   ];
 
   return (
-    <div className="space-x-4 text-white hover:bg-white">
+    <div className="space-x-4 text-[#192841] hover:bg-white">
       {links.map((link) => (
         <Link href={link.path} key={link.title}>
           {link.title}

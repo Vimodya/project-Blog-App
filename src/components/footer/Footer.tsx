@@ -8,10 +8,10 @@ export default function page() {
         <div className=" bg-gray-400 pb-4">
           <div className="flex flex-row justify-around mt-24 mb-8">
             <div className="flex flex-col w-96">
-              <div className="text-white text-6xl font-bold w-72">
+              <div className="text-[#192841] text-6xl font-bold w-72">
                 Want to contact us ?
               </div>
-              <div className="mt-4 text-white ">
+              <div className="mt-4 text-[#192841] ">
                 Have a simple question ? We have the best answer.
               </div>
 
@@ -61,7 +61,7 @@ export default function page() {
             <div>
               <form>
                 <div className="flex flex-col">
-                  <div className="text-white text-2xl font-bold">
+                  <div className="text-[#192841] text-2xl font-bold">
                     Get in touch
                   </div>
                   <div className="flex flex-col space-y-4 mt-4">
