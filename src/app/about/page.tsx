@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Footer from "./../../components/footer/Footer";
 
 export default function page() {
   return (
@@ -42,6 +43,7 @@ export default function page() {
           />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
