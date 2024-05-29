@@ -1,9 +1,20 @@
-import React from "react";
-import Image from "next/image";
-import Footer from "../components/footer/Footer";
+import { options } from "./api/auth/[...nextauth]/options";
+import { getServerSession } from "next-auth/next";
+import UserCard from "./../components/UserCard";
+import Firstpage from "../components/Firstpage";
 
-const Home = () => {
-  return <div></div>;
-};
+export default async function Home() {
+  const session = await getServerSession(options);
 
-export default Home;
+  return (
+    <>
+      {session ? (
+        <UserCard user={session?.user} pagetype={"Home"} />
+      ) : (
+        <div>
+          <Firstpage />
+        </div>
+      )}
+    </>
+  );
+}
