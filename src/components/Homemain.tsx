@@ -1,3 +1,6 @@
+"use client";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 function Homemain() {
@@ -10,9 +13,11 @@ function Homemain() {
           Here is the biggest collection of the best creative thoughts
           <div className="">Just find the thought for your business.</div>
         </div>
-        <button className="bg-white text-[#040326] px-4 py-2 rounded-lg mb-12">
-          Create a blog
-        </button>
+        <Link href="/createBlog">
+          <button className="bg-white text-[#040326] px-4 py-2 rounded-lg mb-12">
+            Create a blog
+          </button>
+        </Link>
       </div>
     </div>
   );
