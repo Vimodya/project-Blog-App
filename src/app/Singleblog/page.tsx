@@ -4,16 +4,16 @@ import React from "react";
 function SingleBlog() {
   return (
     <div>
-      <div className="flex flex-row m-8">
+      <div className="flex flex-col m-8">
         <Image
           src="/blogImage.jpg"
           alt="home"
           width={500}
           height={500}
-          className="rounded-lg w-72 h-96 mr-8"
+          className="rounded-lg w-full h-auto mr-8"
         />
         <div className="flex flex-col">
-          <div className="text-[#192841] text-3xl font-bold mb-4">
+          <div className="text-[#192841] text-3xl font-bold my-8">
             Me and Beach
           </div>
           <div className="flex flex-row mb-4 gap-4">
@@ -35,7 +35,40 @@ function SingleBlog() {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque nam
             libero sapiente, voluptatum est maiores ipsa nobis corporis at
             quidem! Possimus corporis pariatur ipsam fugit similique.
-            Dignissimos deleniti impedit dolorem?
+            Dignissimos deleniti impedit dolorem? Lorem ipsum dolor sit amet
+            consectetur, adipisicing elit. Ipsam impedit similique explicabo
+            facere iusto excepturi, ipsa magnam vero quia delectus molestiae
+            itaque recusandae, odit, repudiandae architecto atque sapiente saepe
+            necessitatibus! Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Cumque nam libero sapiente, voluptatum est maiores ipsa nobis
+            corporis at quidem! Possimus corporis pariatur ipsam fugit
+            similique. Dignissimos deleniti impedit dolorem? Lorem ipsum dolor
+            sit amet consectetur, adipisicing elit. Ipsam impedit similique
+            explicabo facere iusto excepturi, ipsa magnam vero quia delectus
+            molestiae itaque recusandae, odit, repudiandae architecto atque
+            sapiente saepe necessitatibus! Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Cumque nam libero sapiente, voluptatum
+            est maiores ipsa nobis corporis at quidem! Possimus corporis
+            pariatur ipsam fugit similique. Dignissimos deleniti impedit
+            dolorem? Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+            Ipsam impedit similique explicabo facere iusto excepturi, ipsa
+            magnam vero quia delectus molestiae itaque recusandae, odit,
+            repudiandae architecto atque sapiente saepe necessitatibus! Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Cumque nam libero
+            sapiente, voluptatum est maiores ipsa nobis corporis at quidem!
+            Possimus corporis pariatur ipsam fugit similique. Dignissimos
+            deleniti impedit dolorem? Lorem ipsum dolor sit amet consectetur,
+            adipisicing elit. Ipsam impedit similique explicabo facere iusto
+            excepturi, ipsa magnam vero quia delectus molestiae itaque
+            recusandae, odit, repudiandae architecto atque sapiente saepe
+            necessitatibus! Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Cumque nam libero sapiente, voluptatum est maiores ipsa nobis
+            corporis at quidem! Possimus corporis pariatur ipsam fugit
+            similique. Dignissimos deleniti impedit dolorem? Lorem ipsum dolor
+            sit amet consectetur, adipisicing elit. Ipsam impedit similique
+            explicabo facere iusto excepturi, ipsa magnam vero quia delectus
+            molestiae itaque recusandae, odit, repudiandae architecto atque
+            sapiente saepe necessitatibus!
           </div>
         </div>
       </div>

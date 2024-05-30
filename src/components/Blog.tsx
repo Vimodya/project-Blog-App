@@ -5,15 +5,17 @@ import React from "react";
 function Blog() {
   return (
     <div>
-      <div className="flex flex-col w-96 mb-8">
+      <div className="flex flex-col w-72 mb-8  shadow-normalComponent p-4 rounded-lg">
         <Image
           src="/blogImage.jpg"
           alt="home"
           width={500}
           height={500}
-          className="rounded-lg w-72 h-96"
+          className="rounded-lg w-72 h-60"
         />
-        <div className="text-[#192841] text-3xl font-bold ">Me and Beach</div>
+        <div className="text-[#192841] text-3xl font-bold my-4 italic">
+          Me and Sea
+        </div>
         <div className="text-[#192841] text-xl font-light ">
           <Link href="/Singleblog">Read More</Link>
         </div>

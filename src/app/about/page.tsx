@@ -1,46 +1,32 @@
 import React from "react";
 import Image from "next/image";
 import Footer from "./../../components/footer/Footer";
+import { Carousel } from "flowbite-react";
 
 export default function page() {
   return (
     <div>
-      <div className="flex flex-row justify-around mt-24 mb-8">
-        <div className="flex flex-col w-96">
-          <div className="text-blue-300 text-xl font-light w-72 mb-4">
-            About Agency
+      <div className="w-full mt-8">
+        <Image
+          src="/aboutnew.jpg"
+          alt="about"
+          width={1920}
+          height={1080}
+          className="rounded-lg w-full h-[500px]"
+        />
+      </div>
+      <div className="flex flex-row w-1/2 my-8">
+        <div className="flex flex-col  p-4 text-[#192841] ms-12">
+          <div className="text-2xl font-bold my-4 w-1/2">
+            You can create digital ideas that are bigger, bolder, braver and
+            better
           </div>
-          <div className="text-[#192841] text-3xl font-bold w-96 mb-8">
-            We create digital ideas that are bigger, bolder, braver and better.
+          <div className="text-lg font-light my-4 w-1/2">
+            We are a team of creative thinkers and problem solvers dedicated to
+            expanding the limits of what is possible by helping brands achieve
+            their goals. We utilize our experience working with major global
+            corporations to fuel creative innovation that delivers real results.
           </div>
-          <div className="mt-4 text-[#192841] text-md font-light ">
-            We create digital ideas that are bigger, bolder, braver and better.
-            We belive in the power of digital ideas to create a better future
-            for our clients, our society and our planet.
-          </div>
-          <div className="mt-8 flex flex-row justify-between">
-            <div className="flex flex-col">
-              <div className=" text-black px-4 py-2 rounded-lg">10 K+</div>
-              <div className="text-[#192841]">Years of experience</div>
-            </div>
-            <div className="flex flex-col">
-              <div className=" text-black px-4 py-2 rounded-lg">10 K+</div>
-              <div className="text-[#192841]">Years of experience</div>
-            </div>
-            <div className="flex flex-col">
-              <div className=" text-black px-4 py-2 rounded-lg">10 K+</div>
-              <div className="text-[#192841]">Years of experience</div>
-            </div>
-          </div>
-        </div>
-        <div>
-          <Image
-            src="/aboutImage.avif"
-            alt="home"
-            width={500}
-            height={500}
-            className="rounded-lg "
-          />
         </div>
       </div>
       <Footer />
