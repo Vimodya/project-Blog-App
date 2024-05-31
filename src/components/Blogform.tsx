@@ -1,16 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import Sectionblog from "./Sectionblog";
 
 function Blogform() {
   const [formData, setFormData] = useState({
     authorName: "",
-    blogTitle: "",
+
     publishDate: "",
     blogCategory: "",
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -18,28 +17,36 @@ function Blogform() {
     }));
   };
 
-  const handlePublish = async (e) => {
+  const handlePublish = async (e: any) => {
     e.preventDefault();
-    const response = await fetch("/api/submit", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
 
-    if (response.ok) {
-      alert("Form submitted successfully!");
-      setFormData({
-        authorName: "",
-        blogTitle: "",
-        publishDate: "",
-        blogCategory: "",
+    try {
+      const response = await fetch("http://localhost:3000/api/publish", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
-    } else {
+
+      if (response.ok) {
+        alert("Form submitted successfully!");
+        setFormData({
+          authorName: "",
+          publishDate: "",
+          blogCategory: "",
+        });
+      } else {
+        // If response is not OK, throw an error
+        throw new Error("Error submitting form response");
+      }
+    } catch (error) {
+      // Catch any errors that occur during fetch operation
+      console.error("Fetch error:", error.message);
       alert("Error submitting form");
     }
   };
+
   return (
     <div>
       <div className="flex justify-center text-3xl text-[#192841] italic">
@@ -51,33 +58,39 @@ function Blogform() {
             <div className="text-[#192841]">Author name</div>
             <input
               type="text"
+              name="authorName"
               value={formData.authorName}
+              onChange={handleChange} // Add onChange here
               className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             />
             <div className="text-[#192841]">Publish date</div>
             <input
               type="date"
+              name="publishDate"
               value={formData.publishDate}
+              onChange={handleChange} // Add onChange here
               className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             />
             <div className="text-[#192841]">Choose blog category</div>
             <select
-              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
+              name="blogCategory"
               value={formData.blogCategory}
+              onChange={handleChange} // Add onChange here
+              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             >
               <option value="technology">Technology</option>
               <option value="lifestyle">Lifestyle</option>
               <option value="travel">Travel</option>
               <option value="food">Food</option>
-              <option value="food">Education</option>
-              <option value="food">Sports</option>
-              <option value="food">Others</option>
+              <option value="education">Education</option>
+              <option value="sports">Sports</option>
+              <option value="others">Others</option>
             </select>
           </div>
           <div className="flex flex-col gap-4 ml-24">
             <div className="text-[#192841]">Choose a template</div>
-            <Sectionblog onClick={""} />
-            <Sectionblog onClick={""} />
+            {/* <Sectionblog onClick={""} />
+            <Sectionblog onClick={""} /> */}
           </div>
         </div>
         <div className="flex justify-center">
