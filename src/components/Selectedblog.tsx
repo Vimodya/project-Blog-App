@@ -1,8 +1,30 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Blog from "./Blog";
 
-function Selectedblog() {
+function Selectedblog({ category }) {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    // Fetch blogs based on category
+    const fetchBlogs = async () => {
+      try {
+        const res = await fetch(
+          `http://localhost:3000/api/getSection/${category}`
+        );
+        if (!res.ok) {
+          throw new Error("Failed to fetch blogs");
+        }
+        const data = await res.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, [category]);
+
   return (
     <div>
       <div className="flex flex-col">
@@ -14,9 +36,9 @@ function Selectedblog() {
           className="rounded-lg h-[500px]"
         />
         <div className="flex flex-row gap-12 justify-center my-12">
-          <Blog />
-          <Blog />
-          <Blog />
+          {blogs.map((blog) => (
+            <Blog key={blog.id} title={blog.blogTitle} id={blog.id} />
+          ))}
         </div>
       </div>
     </div>
