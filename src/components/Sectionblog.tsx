@@ -1,7 +1,12 @@
 import Image from "next/image";
 import React from "react";
 
-function Sectionblog({ onClick }) {
+interface sectionProps {
+  onClick: () => void;
+  section: string;
+}
+
+function Sectionblog({ onClick, section }: sectionProps) {
   return (
     <div>
       <div className="flex flex-col items-center justify-center shadow-normalComponent rounded-lg">
@@ -16,7 +21,7 @@ function Sectionblog({ onClick }) {
           className="text-2xl font-light my-4 text-[#040326] italic cursor-pointer"
           onClick={onClick}
         >
-          Foods
+          {section}
         </div>
       </div>
     </div>

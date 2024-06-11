@@ -2,7 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-function Blog() {
+interface blogprops {
+  id: string;
+  title: string;
+}
+
+function Blog({ title, id }: blogprops) {
   return (
     <div>
       <div className="flex flex-col w-72 mb-8  shadow-normalComponent p-4 rounded-lg">
@@ -14,10 +19,10 @@ function Blog() {
           className="rounded-lg w-72 h-60"
         />
         <div className="text-[#192841] text-3xl font-bold my-4 italic">
-          Me and Sea
+          {title}
         </div>
         <div className="text-[#192841] text-xl font-light ">
-          <Link href="/Singleblog">Read More</Link>
+          <Link href={`/blog/${id}`}>Read More</Link>
         </div>
       </div>
     </div>
