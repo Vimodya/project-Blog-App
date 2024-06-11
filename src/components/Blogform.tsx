@@ -4,12 +4,17 @@ import React, { useState } from "react";
 function Blogform() {
   const [formData, setFormData] = useState({
     authorName: "",
-
     publishDate: "",
     blogCategory: "",
+    blogTitle: "",
+    blogContent: "",
   });
 
-  const handleChange = (e: any) => {
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -17,11 +22,11 @@ function Blogform() {
     }));
   };
 
-  const handlePublish = async (e: any) => {
+  const handlePublish = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/publish", {
+      const response = await fetch("/api/publish", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -35,14 +40,15 @@ function Blogform() {
           authorName: "",
           publishDate: "",
           blogCategory: "",
+          blogTitle: "",
+          blogContent: "",
         });
       } else {
-        // If response is not OK, throw an error
-        throw new Error("Error submitting form response");
+        const errorData = await response.json();
+        alert(`Error submitting form: ${errorData.message}`);
       }
     } catch (error) {
-      // Catch any errors that occur during fetch operation
-      console.error("Fetch error:", error.message);
+      console.error("Fetch error:", (error as Error).message);
       alert("Error submitting form");
     }
   };
@@ -60,7 +66,7 @@ function Blogform() {
               type="text"
               name="authorName"
               value={formData.authorName}
-              onChange={handleChange} // Add onChange here
+              onChange={handleChange}
               className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             />
             <div className="text-[#192841]">Publish date</div>
@@ -68,14 +74,14 @@ function Blogform() {
               type="date"
               name="publishDate"
               value={formData.publishDate}
-              onChange={handleChange} // Add onChange here
+              onChange={handleChange}
               className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             />
             <div className="text-[#192841]">Choose blog category</div>
             <select
               name="blogCategory"
               value={formData.blogCategory}
-              onChange={handleChange} // Add onChange here
+              onChange={handleChange}
               className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             >
               <option value="technology">Technology</option>
@@ -88,9 +94,21 @@ function Blogform() {
             </select>
           </div>
           <div className="flex flex-col gap-4 ml-24">
-            <div className="text-[#192841]">Choose a template</div>
-            {/* <Sectionblog onClick={""} />
-            <Sectionblog onClick={""} /> */}
+            <div className="text-[#192841]">Blog Title</div>
+            <input
+              type="text"
+              name="blogTitle"
+              value={formData.blogTitle}
+              onChange={handleChange}
+              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
+            />
+            <div className="text-[#192841]">Blog Content</div>
+            <textarea
+              name="blogContent"
+              value={formData.blogContent}
+              onChange={handleChange}
+              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
+            ></textarea>
           </div>
         </div>
         <div className="flex justify-center">
