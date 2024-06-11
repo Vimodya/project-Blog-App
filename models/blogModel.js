@@ -21,6 +21,10 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter the blog content"],
   },
+  blogImage: {
+    type: String,
+    required: [true, "Please enter the blog image"],
+  },
 });
 
 const Blog = mongoose.models.Blog || mongoose.model("Blog", blogSchema);

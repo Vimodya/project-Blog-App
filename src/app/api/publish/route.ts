@@ -1,26 +1,33 @@
-import { NextResponse } from "next/server";
-import connectMongoDB from "../../../../lib/mongodb";
-import Blog from "../../../../models/BlogModel";
+// import { NextResponse } from "next/server";
+// import connectMongoDB from "../../../../lib/mongodb";
+// import Blog from "../../../../models/blogModel";
 
 // export async function POST(req) {
 //   try {
-//     const { authorName, publishDate, blogCategory, blogTitle, blogContent } =
-//       await req.json();
+//     const {
+//       authorName,
+//       publishDate,
+//       blogCategory,
+//       blogTitle,
+//       blogContent,
+//       blogImage,
+//     } = await req.json();
 //     console.log("Received data:", {
 //       authorName,
 //       publishDate,
 //       blogCategory,
 //       blogTitle,
 //       blogContent,
+//       blogImage,
 //     });
 
-//     // Validate input
 //     if (
 //       !authorName ||
 //       !publishDate ||
 //       !blogCategory ||
 //       !blogTitle ||
-//       !blogContent
+//       !blogContent ||
+//       !blogImage
 //     ) {
 //       return NextResponse.json(
 //         { message: "All fields are required" },
@@ -36,21 +43,22 @@ import Blog from "../../../../models/BlogModel";
 //       blogCategory,
 //       blogTitle,
 //       blogContent,
+//       blogImage,
 //     });
 
 //     const res = await blog.save();
 //     console.log("Created blog entry:", res);
 
-//     if (!res) {
-//       console.error("Failed to create blog entry in database");
+//     return NextResponse.json({ id: res._id }, { status: 201 });
+//   } catch (error) {
+//     if (error.code === 11000) {
+//       console.error("Duplicate key error:", error);
 //       return NextResponse.json(
-//         { message: "Failed to create blog" },
-//         { status: 500 }
+//         { message: "Duplicate key error" },
+//         { status: 400 }
 //       );
 //     }
 
-//     return NextResponse.json({ id: res._id }, { status: 201 });
-//   } catch (error) {
 //     console.error("Error in blog creation:", error);
 //     return NextResponse.json(
 //       { message: "Failed to create blog" },
@@ -58,24 +66,38 @@ import Blog from "../../../../models/BlogModel";
 //     );
 //   }
 // }
+import { NextResponse } from "next/server";
+import connectMongoDB from "../../../../lib/mongodb";
+import Blog from "../../../../models/blogModel";
+
 export async function POST(req) {
   try {
-    const { authorName, publishDate, blogCategory, blogTitle, blogContent } =
-      await req.json();
+    const {
+      authorName,
+      publishDate,
+      blogCategory,
+      blogTitle,
+      blogContent,
+      blogImage,
+    } = await req.json();
+
     console.log("Received data:", {
       authorName,
       publishDate,
       blogCategory,
       blogTitle,
       blogContent,
+      blogImage,
     });
 
+    // Ensure all required fields are present
     if (
       !authorName ||
       !publishDate ||
       !blogCategory ||
       !blogTitle ||
-      !blogContent
+      !blogContent ||
+      !blogImage
     ) {
       return NextResponse.json(
         { message: "All fields are required" },
@@ -85,19 +107,22 @@ export async function POST(req) {
 
     await connectMongoDB();
 
+    // Save the blog entry to the database
     const blog = new Blog({
       authorName,
       publishDate,
       blogCategory,
       blogTitle,
       blogContent,
+      blogImage,
     });
 
-    const res = await blog.save();
-    console.log("Created blog entry:", res);
+    const savedBlog = await blog.save();
+    console.log("Created blog entry:", savedBlog);
 
-    return NextResponse.json({ id: res._id }, { status: 201 });
+    return NextResponse.json({ id: savedBlog._id }, { status: 201 });
   } catch (error) {
+    // Handle specific errors
     if (error.code === 11000) {
       console.error("Duplicate key error:", error);
       return NextResponse.json(
