@@ -33,7 +33,12 @@ function Firstpage() {
       </div>
       <div className="flex flex-wrap mt-8 justify-center gap-12">
         {blogs.map((blog) => (
-          <Blog key={blog._id} title={blog.blogTitle} id={blog._id} />
+          <Blog
+            key={blog._id}
+            title={blog.blogTitle}
+            id={blog._id}
+            blogImage={blog.blogImage}
+          />
         ))}
       </div>
       <Footer />

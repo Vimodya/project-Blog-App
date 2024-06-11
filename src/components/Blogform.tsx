@@ -1,4 +1,9 @@
 "use client";
+import {
+  CldUploadWidget,
+  CloudinaryUploadWidgetInfo,
+  CloudinaryUploadWidgetResults,
+} from "next-cloudinary";
 import React, { useState } from "react";
 
 function Blogform() {
@@ -8,13 +13,10 @@ function Blogform() {
     blogCategory: "",
     blogTitle: "",
     blogContent: "",
+    blogImage: "",
   });
 
-  const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
-  ) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -22,11 +24,11 @@ function Blogform() {
     }));
   };
 
-  const handlePublish = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handlePublish = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/api/publish", {
+      const response = await fetch("http://localhost:3000/api/publish", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -42,15 +44,26 @@ function Blogform() {
           blogCategory: "",
           blogTitle: "",
           blogContent: "",
+          blogImage: "",
         });
       } else {
         const errorData = await response.json();
         alert(`Error submitting form: ${errorData.message}`);
       }
     } catch (error) {
-      console.error("Fetch error:", (error as Error).message);
+      console.error("Fetch error:", error.message);
       alert("Error submitting form");
     }
+  };
+
+  const handleImageUpload = (result: CloudinaryUploadWidgetResults) => {
+    const uploadResults = result.info as CloudinaryUploadWidgetInfo;
+    const blogImageURL = uploadResults.secure_url;
+
+    setFormData((prevData) => ({
+      ...prevData,
+      blogImage: blogImageURL,
+    }));
   };
 
   return (
@@ -84,13 +97,14 @@ function Blogform() {
               onChange={handleChange}
               className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             >
-              <option value="technology">Technology</option>
-              <option value="lifestyle">Lifestyle</option>
-              <option value="travel">Travel</option>
-              <option value="food">Food</option>
-              <option value="education">Education</option>
-              <option value="sports">Sports</option>
-              <option value="others">Others</option>
+              <option value="Technology">Technology</option>
+              <option value="LifeStyle">Lifestyle</option>
+              <option value="Travel">Travel</option>
+              <option value="Music">Music</option>
+              <option value="Foods">Food</option>
+              <option value="Education">Education</option>
+              <option value="Sports">Sports</option>
+              <option value="Others">Others</option>
             </select>
           </div>
           <div className="flex flex-col gap-4 ml-24">
@@ -110,6 +124,20 @@ function Blogform() {
               className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             ></textarea>
           </div>
+          <CldUploadWidget
+            uploadPreset="hxuyyd1e"
+            onSuccess={handleImageUpload}
+          >
+            {({ open }) => (
+              <button
+                type="button"
+                onClick={() => open()}
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Upload an Image
+              </button>
+            )}
+          </CldUploadWidget>
         </div>
         <div className="flex justify-center">
           <button className="bg-[#192841] text-white p-2 rounded-lg">

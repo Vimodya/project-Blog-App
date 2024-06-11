@@ -50,7 +50,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import Blog from "./Blog";
 
-function Selectedblog({ blogCategory }) {
+function Selectedblog({ blogCategory, section }) {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(() => {
@@ -76,7 +76,7 @@ function Selectedblog({ blogCategory }) {
     <div>
       <div className="flex flex-col">
         <Image
-          src={`/food.jpg`}
+          src={`/${section}.jpg`}
           alt="blog"
           width={1920}
           height={500}
@@ -84,7 +84,12 @@ function Selectedblog({ blogCategory }) {
         />
         <div className="flex flex-row gap-12 justify-center my-12">
           {blogs.map((blog) => (
-            <Blog key={blog._id} title={blog.blogTitle} id={blog._id} />
+            <Blog
+              key={blog._id}
+              title={blog.blogTitle}
+              id={blog._id}
+              blogImage={blog.blogImage}
+            />
           ))}
         </div>
       </div>

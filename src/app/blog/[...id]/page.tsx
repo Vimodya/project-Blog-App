@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 import Image from "next/image";
 import React from "react";
 import connectMongoDB from "../../../../lib/mongodb";
-import Blog from "../../../../models/BlogModel";
+import Blog from "../../../../models/blogModel";
 
 interface BlogProps {
   id: string;
@@ -30,11 +30,11 @@ const page = async ({ params }: { params: { id: string } }) => {
     <div>
       <div className="flex flex-col m-8">
         <Image
-          src="/blogImage.jpg"
+          src={blog.blogImage}
           alt="home"
           width={500}
           height={500}
-          className="rounded-lg w-full h-auto mr-8"
+          className="rounded-lg w-full mr-8"
         />
         <div className="flex flex-col">
           <div className="text-[#192841] text-3xl font-bold my-8">

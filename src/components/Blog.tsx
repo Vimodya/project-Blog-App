@@ -5,14 +5,15 @@ import React from "react";
 interface blogprops {
   id: string;
   title: string;
+  blogImage: string;
 }
 
-function Blog({ title, id }: blogprops) {
+function Blog({ title, id, blogImage }: blogprops) {
   return (
     <div>
       <div className="flex flex-col w-72 mb-8  shadow-normalComponent p-4 rounded-lg">
         <Image
-          src="/blogImage.jpg"
+          src={blogImage}
           alt="home"
           width={500}
           height={500}

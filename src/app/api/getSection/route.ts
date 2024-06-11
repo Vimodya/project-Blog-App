@@ -1,6 +1,6 @@
 // pages/api/getBlogs.js
 import connectMongoDB from "../../../../lib/mongodb";
-import Blog from "../../../../models/BlogModel";
+import Blog from "../../../../models/blogModel";
 
 export async function GET(req, res) {
   await connectMongoDB();

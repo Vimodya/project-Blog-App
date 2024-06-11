@@ -11,7 +11,7 @@ function Sectionblog({ onClick, section }: sectionProps) {
     <div>
       <div className="flex flex-col items-center justify-center shadow-normalComponent rounded-lg">
         <Image
-          src="/food.jpg"
+          src={`/${section}.jpg`}
           alt="blog"
           width={200}
           height={200}
