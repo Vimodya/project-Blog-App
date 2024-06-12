@@ -2,7 +2,7 @@
 import connectMongoDB from "../../../../lib/mongodb";
 import Blog from "../../../../models/blogModel";
 
-export async function GET(req, res) {
+export async function GET(req) {
   await connectMongoDB();
 
   const { searchParams } = new URL(req.url);

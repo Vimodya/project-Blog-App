@@ -1,17 +1,7 @@
-import mongoose from "mongoose";
 import Image from "next/image";
 import React from "react";
 import connectMongoDB from "../../../../lib/mongodb";
 import Blog from "../../../../models/blogModel";
-
-interface BlogProps {
-  id: string;
-  blogTitle: string;
-  authorName: string;
-  blogContent: string;
-  blogImage: string;
-  createdAt: Date;
-}
 
 async function fetchBlog(id: string) {
   await connectMongoDB();

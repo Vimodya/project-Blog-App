@@ -16,7 +16,7 @@ export const options: NextAuthOptions = {
         },
         password: { label: "Password", type: "password" },
       },
-      async authorize(credentials, req): Promise<User | null> {
+      async authorize(credentials): Promise<User | null> {
         await connectMongoDB();
 
         if (!credentials) {

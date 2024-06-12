@@ -1,10 +1,8 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Image from "next/image";
 import Footer from "./footer/Footer";
 import Homemain from "./Homemain";
 import Blog from "./Blog";
-import Sectionblog from "./Sectionblog";
 
 function Firstpage() {
   const [blogs, setBlogs] = useState([]);
