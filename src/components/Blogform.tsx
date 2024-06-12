@@ -72,7 +72,7 @@ function Blogform() {
         Publish a blog
       </div>
       <form onSubmit={handlePublish}>
-        <div className="flex flex-row gap-4 my-8 justify-center">
+        <div className="flex sm:flex-row flex-col mx-8 md:mx-8 lg:mx-0 gap-4 my-8 justify-center">
           <div className="flex flex-col gap-4">
             <div className="text-[#192841]">Author name</div>
             <input
@@ -107,7 +107,22 @@ function Blogform() {
               <option value="Others">Others</option>
             </select>
           </div>
-          <div className="flex flex-col gap-4 ml-24">
+          <div className="flex flex-col gap-4 sm:ml-24 ml-0">
+            <div className="text-[#192841]">Blog image</div>
+            <CldUploadWidget
+              uploadPreset="hxuyyd1e"
+              onSuccess={handleImageUpload}
+            >
+              {({ open }) => (
+                <button
+                  type="button"
+                  onClick={() => open()}
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                >
+                  Upload an Image
+                </button>
+              )}
+            </CldUploadWidget>
             <div className="text-[#192841]">Blog Title</div>
             <input
               type="text"
@@ -124,23 +139,10 @@ function Blogform() {
               className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             ></textarea>
           </div>
-          <CldUploadWidget
-            uploadPreset="hxuyyd1e"
-            onSuccess={handleImageUpload}
-          >
-            {({ open }) => (
-              <button
-                type="button"
-                onClick={() => open()}
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-              >
-                Upload an Image
-              </button>
-            )}
-          </CldUploadWidget>
         </div>
+
         <div className="flex justify-center">
-          <button className="bg-[#192841] text-white p-2 rounded-lg">
+          <button className="bg-[#192841] text-white p-4 rounded-lg">
             Publish
           </button>
         </div>
