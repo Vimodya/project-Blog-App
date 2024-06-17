@@ -10,7 +10,9 @@ function Firstpage() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/getBlogs");
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/getBlogs`
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch blogs");
         }
