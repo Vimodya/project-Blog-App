@@ -9,7 +9,7 @@ function Selectedblog({ blogCategory, section }) {
     const fetchBlogs = async () => {
       try {
         const res = await fetch(
-          `http://localhost:3000/api/getSection?blogCategory=${blogCategory}`
+          `${process.env.NEXT_PUBLIC_API_URL}/api/getSection?blogCategory=${blogCategory}`
         );
         if (!res.ok) {
           throw new Error("Failed to fetch blogs");
