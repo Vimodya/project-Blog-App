@@ -32,6 +32,7 @@ function Blogform() {
         `${process.env.NEXT_PUBLIC_API_URL}/api/publish`,
         {
           method: "POST",
+          mode: "no-cors",
           headers: {
             "Content-Type": "application/json",
           },
