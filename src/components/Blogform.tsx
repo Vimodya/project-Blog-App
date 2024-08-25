@@ -9,7 +9,7 @@ import React, { useState } from "react";
 function Blogform() {
   const [formData, setFormData] = useState({
     authorName: "",
-    publishDate: "",
+
     blogCategory: "",
     blogTitle: "",
     blogContent: "",
@@ -44,7 +44,7 @@ function Blogform() {
         alert("Form submitted successfully!");
         setFormData({
           authorName: "",
-          publishDate: "",
+
           blogCategory: "",
           blogTitle: "",
           blogContent: "",
@@ -86,14 +86,7 @@ function Blogform() {
               onChange={handleChange}
               className="rounded-lg border border-[#192841] p-2 bg-gray-200"
             />
-            <div className="text-[#192841]">Publish date</div>
-            <input
-              type="date"
-              name="publishDate"
-              value={formData.publishDate}
-              onChange={handleChange}
-              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
-            />
+
             <div className="text-[#192841]">Choose blog category</div>
             <select
               name="blogCategory"
@@ -110,6 +103,14 @@ function Blogform() {
               <option value="Sports">Sports</option>
               <option value="Others">Others</option>
             </select>
+            <div className="text-[#192841]">Blog Title</div>
+            <input
+              type="text"
+              name="blogTitle"
+              value={formData.blogTitle}
+              onChange={handleChange}
+              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
+            />
           </div>
           <div className="flex flex-col gap-4 sm:ml-24 ml-0">
             <div className="text-[#192841]">Blog image</div>
@@ -121,20 +122,13 @@ function Blogform() {
                 <button
                   type="button"
                   onClick={() => open()}
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  className="bg-[#192841] hover:bg-[#192841] text-white font-bold py-2 px-4 rounded"
                 >
                   Upload an Image
                 </button>
               )}
             </CldUploadWidget>
-            <div className="text-[#192841]">Blog Title</div>
-            <input
-              type="text"
-              name="blogTitle"
-              value={formData.blogTitle}
-              onChange={handleChange}
-              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
-            />
+
             <div className="text-[#192841]">Blog Content</div>
             <textarea
               name="blogContent"

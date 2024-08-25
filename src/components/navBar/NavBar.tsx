@@ -2,24 +2,30 @@
 
 import Link from "next/link";
 import React, { useState } from "react";
+import Image from "next/image";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   return (
     <div>
       {/* <div className="flex flex-row  justify-between"> */}
-      <div className="flex flex-row justify-between mx-8 mt-8 ">
-        <div className="text-[#192841] font-bold ">Logo</div>
-        <div className="text-[#192841] space-x-4 hidden md:flex lg:flex ">
+      <div className="flex flex-row justify-between mx-8 ">
+        <div className="flex items-center mt-4">
+          <Image
+            src="/w.png" // Replace with the path to your logo image
+            alt="Logo"
+            width={50} // Adjust the width as needed
+            height={50} // Adjust the height as needed
+          />
+        </div>
+        <div className="text-[#192841] space-x-4 hidden md:flex lg:flex mt-8 ">
           <Link href="/home" className="hover:text-yellow-500">
             Home
           </Link>
           <Link href="/about" className="hover:text-yellow-500">
             About
           </Link>
-          <Link href="/contacts" className="hover:text-yellow-500">
-            Contact
-          </Link>
+
           <Link href="/blogs" className="hover:text-yellow-500">
             Blogs
           </Link>

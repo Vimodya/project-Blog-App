@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export default function page() {
   return (
@@ -6,11 +7,18 @@ export default function page() {
       <div className="w-full bg-gray-400 flex sm:flex-row flex-col">
         <div className="sm:w-3/4 w-full ">
           <div className="flex flex-col pl-8 py-8 pr-4">
-            <div className="text-[#192841] text-xl font-bold ">Logo</div>
+            <div className="flex items-center">
+              <Image
+                src="/w.png" // Replace with the path to your logo image
+                alt="Logo"
+                width={100} // Adjust the width as needed
+                height={50} // Adjust the height as needed
+                className="object-contain"
+              />
+            </div>
             <div className="text-[#192841] text-md font-light mt-8 w-3/4 italic">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perferendis reiciendis totam labore eum illum nisi, delectus aut
-              quia eligendi.
+              Thank you for visiting! © 2024 Color the world. Stay tuned for
+              more updates and insights.
             </div>
             <div className="flex flex-row  justify-center gap-16 mt-24">
               <svg

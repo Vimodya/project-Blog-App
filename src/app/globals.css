@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* styles/globals.css */
+@import url("slick-carousel/slick/slick.css");
+@import url("slick-carousel/slick/slick-theme.css");
 
 .styleQ {
   clip-path: polygon(0 0, 100% 0%, 100% 88%, 0% 100%);
