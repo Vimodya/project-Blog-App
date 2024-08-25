@@ -5,10 +5,7 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter the author's name"],
   },
-  publishDate: {
-    type: Date,
-    required: [true, "Please enter the publish date"],
-  },
+
   blogCategory: {
     type: String,
     required: [true, "Please enter the blog category"],

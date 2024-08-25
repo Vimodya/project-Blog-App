@@ -2,7 +2,7 @@ import React from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/navBar/NavBar";
-import AuthProvider from "./context/AuthProvider";
+import { AuthProvider } from "./context/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 

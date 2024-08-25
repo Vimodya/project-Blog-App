@@ -1,15 +1,18 @@
+// src/components/navBar/NavBar.tsx
 "use client";
 
 import Link from "next/link";
 import React, { useState } from "react";
 import Image from "next/image";
+import { useAuth } from "./../../app/context/AuthProvider";
 
 export default function NavBar() {
   const [open, setOpen] = useState(false);
+  const { isLoggedIn } = useAuth();
+
   return (
     <div>
-      {/* <div className="flex flex-row  justify-between"> */}
-      <div className="flex flex-row justify-between mx-8 ">
+      <div className="flex flex-row justify-between mx-8">
         <div className="flex items-center mt-4">
           <Image
             src="/w.png" // Replace with the path to your logo image
@@ -18,20 +21,21 @@ export default function NavBar() {
             height={50} // Adjust the height as needed
           />
         </div>
-        <div className="text-[#192841] space-x-4 hidden md:flex lg:flex mt-8 ">
+        <div className="text-[#192841] space-x-4 hidden md:flex lg:flex mt-8">
           <Link href="/home" className="hover:text-yellow-500">
             Home
           </Link>
           <Link href="/about" className="hover:text-yellow-500">
             About
           </Link>
-
           <Link href="/blogs" className="hover:text-yellow-500">
             Blogs
           </Link>
-          <Link href="/login" className="hover:text-yellow-500">
-            LogIn
-          </Link>
+          {!isLoggedIn && (
+            <Link href="/login" className="hover:text-yellow-500">
+              LogIn
+            </Link>
+          )}
         </div>
       </div>
       <div className="">
@@ -44,9 +48,9 @@ export default function NavBar() {
       </div>
       {open && (
         <div className="bg-white">
-          <div className="absolute  w-full h-full bg-white bg-opacity-50">
+          <div className="absolute w-full h-full bg-white bg-opacity-50">
             <button onClick={() => setOpen(false)}>Close</button>
-            <div className="flex flex-col justify-end text-[#192841] space-y-4 ">
+            <div className="flex flex-col justify-end text-[#192841] space-y-4">
               <Link href="/" className="hover:text-yellow-500">
                 Home
               </Link>
@@ -59,11 +63,15 @@ export default function NavBar() {
               <Link href="/blogs" className="hover:text-yellow-500">
                 Blogs
               </Link>
+              {!isLoggedIn && (
+                <Link href="/login" className="hover:text-yellow-500">
+                  LogIn
+                </Link>
+              )}
             </div>
           </div>
         </div>
       )}
     </div>
-    // </div>
   );
 }
