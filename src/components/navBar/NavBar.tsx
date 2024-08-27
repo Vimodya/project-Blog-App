@@ -14,12 +14,7 @@ export default function NavBar() {
     <div>
       <div className="flex flex-row justify-between mx-8">
         <div className="flex items-center mt-4">
-          <Image
-            src="/w.png" // Replace with the path to your logo image
-            alt="Logo"
-            width={50} // Adjust the width as needed
-            height={50} // Adjust the height as needed
-          />
+          <Image src="/w.png" alt="Logo" width={50} height={50} />
         </div>
         <div className="text-[#192841] space-x-4 hidden md:flex lg:flex mt-8">
           <Link href="/home" className="hover:text-yellow-500">
