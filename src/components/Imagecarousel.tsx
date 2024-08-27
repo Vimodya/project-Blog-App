@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 const images = ["/blog-t.jpg", "/blogimagenew.jpg", "/aboutnew.webp"];
 
@@ -28,7 +29,7 @@ const ImageCarousel: React.FC = () => {
 
   return (
     <div className="relative w-full h-[500px] overflow-hidden">
-      <img
+      <Image
         src={images[currentIndex]}
         alt={`Carousel Image ${currentIndex + 1}`}
         className="w-full h-full object-cover transition-transform duration-500"
