@@ -7,7 +7,6 @@ export async function GET() {
     await connectMongoDB();
 
     const blogs = await Blog.find();
-    console.log("Fetched blogs:", blogs);
 
     return NextResponse.json(blogs); // Return data directly
   } catch (error) {

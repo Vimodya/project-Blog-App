@@ -29,7 +29,7 @@ function Blogform() {
 
     try {
       const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/publish`,
+        `${process.env.NEXT_PUBLIC_URL}/api/publish`,
         {
           method: "POST",
           mode: "no-cors",

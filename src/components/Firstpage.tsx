@@ -11,8 +11,9 @@ function Firstpage() {
     const fetchBlogs = async () => {
       try {
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}/api/getBlogs`
+          `${process.env.NEXT_PUBLIC_URL}/api/getBlogs`
         );
+        console.log(response);
         if (!response.ok) {
           throw new Error("Failed to fetch blogs");
         }

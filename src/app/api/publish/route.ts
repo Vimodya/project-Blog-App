@@ -49,7 +49,6 @@ export async function POST(req) {
     });
 
     const savedBlog = await blog.save();
-    console.log("Created blog entry:", savedBlog);
 
     return NextResponse.json({ id: savedBlog._id }, { status: 201 });
   } catch (error) {
