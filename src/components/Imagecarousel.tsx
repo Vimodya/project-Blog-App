@@ -33,6 +33,8 @@ const ImageCarousel: React.FC = () => {
         src={images[currentIndex]}
         alt={`Carousel Image ${currentIndex + 1}`}
         className="w-full h-full object-cover transition-transform duration-500"
+        width={500}
+        height={500}
       />
       <button
         className="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full"

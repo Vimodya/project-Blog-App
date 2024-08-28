@@ -20,10 +20,6 @@ export default function NavBar() {
           <Link href="/blogs" className="hover:text-yellow-500">
             Blogs
           </Link>
-
-          <Link href="/login" className="hover:text-yellow-500">
-            LogIn
-          </Link>
         </div>
       </div>
     </div>

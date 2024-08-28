@@ -2,13 +2,14 @@
 import React from "react";
 import ImageCarousel from "./../../components/Imagecarousel";
 import Footer from "./../../components/footer/Footer";
+import HowItWorks from "../../components/HowItWorks";
 
 const AboutPage: React.FC = () => {
   return (
     <div>
-      <div className="flex flex-col lg:flex-row mt-4 bg-[#FEF3C7] mb-8">
+      <div className="flex flex-col lg:flex-row mt-4 bg-black mb-8">
         <div className="w-full lg:w-1/2 flex items-center justify-center p-4">
-          <div className="text-[#192841] max-w-lg">
+          <div className="text-white max-w-lg">
             <h1 className="text-2xl font-bold my-4">
               You can create digital ideas that are bigger, bolder, braver, and
               better
@@ -26,6 +27,7 @@ const AboutPage: React.FC = () => {
           <ImageCarousel />
         </div>
       </div>
+      <HowItWorks />
       <Footer />
     </div>
   );

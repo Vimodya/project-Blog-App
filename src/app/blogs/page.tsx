@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import Footer from "./../../components/footer/Footer";
 import Sectionblog from "../../components/Sectionblog";
 import Selectedblog from "../../components/Selectedblog";
+import Blog from "../../components/Blog";
 
 export default function Page() {
   const [selectedBlogIndex, setSelectedBlogIndex] = useState(null);
@@ -53,6 +54,28 @@ export default function Page() {
     return () => window.removeEventListener("resize", updateVisibleSections); // Cleanup on unmount
   }, []);
 
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_URL}/api/getBlogs`
+        );
+        console.log(response);
+        if (!response.ok) {
+          throw new Error("Failed to fetch blogs");
+        }
+        const data = await response.json();
+        setBlogs(data);
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <div className="flex flex-col">
       <div className="flex flex-row gap-12 my-8 justify-center items-center">
@@ -89,14 +112,17 @@ export default function Page() {
       {selectedBlogIndex === null && (
         <>
           <div className="text-4xl font-semibold text-[#040326] text-start my-8 ms-8">
-            Most viewed blogs
+            Latest Blogs
           </div>
           <div className="flex flex-wrap ms-32 my-8 gap-24">
-            {/* <Blog />
-            <Blog />
-            <Blog />
-            <Blog />
-            <Blog /> */}
+            {blogs.map((blog) => (
+              <Blog
+                key={blog._id}
+                title={blog.blogTitle}
+                id={blog._id}
+                blogImage={blog.blogImage}
+              />
+            ))}
           </div>
         </>
       )}
