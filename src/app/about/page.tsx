@@ -61,7 +61,7 @@ const AboutPage: React.FC = () => {
 
             <p className="text-lg font-light my-4 ms-12r ">
               Dynamic space designed for storytellers, thinkers, and creators to
-              share their voice with the world. Whether you're passionate about
+              share their voice with the world. Whether you are passionate about
               writing, eager to share your experiences, or simply want to
               connect with a like-minded community, our platform offers the
               tools you need to express yourself.
