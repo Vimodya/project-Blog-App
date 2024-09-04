@@ -19,7 +19,7 @@ function Blog({ title, id, blogImage }: blogprops) {
           height={500}
           className="rounded-lg w-72 h-60"
         />
-        <div className="text-[#192841] text-3xl font-bold my-4 italic">
+        <div className="text-[#6b705c] text-3xl font-bold my-4 italic">
           {title}
         </div>
         <div className="text-[#192841] text-xl font-light ">

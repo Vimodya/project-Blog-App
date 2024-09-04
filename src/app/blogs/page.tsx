@@ -111,7 +111,7 @@ export default function Page() {
       </div>
       {selectedBlogIndex === null && (
         <>
-          <div className="text-4xl font-semibold text-[#040326] text-start my-8 ms-8">
+          <div className="text-4xl font-semibold text-[#24321c] text-start my-8 ms-8">
             Latest Blogs
           </div>
           <div className="flex flex-wrap ms-32 my-8 gap-24">

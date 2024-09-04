@@ -18,7 +18,7 @@ function Sectionblog({ onClick, section }: sectionProps) {
           className="rounded-lg "
         />
         <div
-          className="text-2xl font-light my-4 text-[#040326] italic cursor-pointer"
+          className="text-2xl font-light my-4 text-[#5f7c7b] italic cursor-pointer"
           onClick={onClick}
         >
           {section}

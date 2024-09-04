@@ -10,7 +10,7 @@ export default function NavBar() {
         <div className="flex items-center mt-4">
           <Image src="/w.png" alt="Logo" width={50} height={50} />
         </div>
-        <div className="text-[#192841] space-x-4 flex mt-8">
+        <div className="text-[#35522b] space-x-4 flex mt-8">
           <Link href="/home" className="hover:text-yellow-500">
             Home
           </Link>

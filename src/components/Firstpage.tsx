@@ -29,7 +29,7 @@ function Firstpage() {
   return (
     <div>
       <Homemain />
-      <div className="mt-8 text-2xl text-[#040326] text-center p-4 font-sans justify-center italic ">
+      <div className="mt-8 text-2xl text-[#24321c] text-center p-4 font-sans justify-center italic ">
         Write your story, inspire the world
       </div>
       <div className="flex flex-wrap mt-8 justify-center gap-12">

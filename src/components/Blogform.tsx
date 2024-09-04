@@ -72,48 +72,64 @@ function Blogform() {
 
   return (
     <div>
-      <div className="flex justify-center text-3xl text-[#192841] italic">
+      <div className="flex justify-center text-3xl text-[#5f7c7b] italic">
         Publish a blog
       </div>
       <form onSubmit={handlePublish}>
         <div className="flex sm:flex-row flex-col mx-8 md:mx-8 lg:mx-0 gap-4 my-8 justify-center">
           <div className="flex flex-col gap-4">
-            <div className="text-[#192841]">Author name</div>
+            <div className="text-[#5f7c7b]">Author name</div>
             <input
               type="text"
               name="authorName"
               value={formData.authorName}
               onChange={handleChange}
-              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
+              className="rounded-lg border border-[#5f7c7b] p-2 bg-gray-200"
             />
 
-            <div className="text-[#192841]">Choose blog category</div>
+            <div className="text-[#5f7c7b]">Choose blog category</div>
             <select
               name="blogCategory"
               value={formData.blogCategory}
               onChange={handleChange}
-              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
+              className="rounded-lg border border-[#5f7c7b] p-2 bg-gray-200"
             >
-              <option value="Technology">Technology</option>
-              <option value="LifeStyle">Lifestyle</option>
-              <option value="Travel">Travel</option>
-              <option value="Music">Music</option>
-              <option value="Foods">Food</option>
-              <option value="Education">Education</option>
-              <option value="Sports">Sports</option>
-              <option value="Others">Others</option>
+              <option className="text-[#5f7c7b]" value="Technology">
+                Technology
+              </option>
+              <option className="text-[#5f7c7b]" value="LifeStyle">
+                Lifestyle
+              </option>
+              <option className="text-[#5f7c7b]" value="Travel">
+                Travel
+              </option>
+              <option className="text-[#5f7c7b]" value="Music">
+                Music
+              </option>
+              <option className="text-[#5f7c7b]" value="Foods">
+                Food
+              </option>
+              <option className="text-[#5f7c7b]" value="Education">
+                Education
+              </option>
+              <option className="text-[#5f7c7b]" value="Sports">
+                Sports
+              </option>
+              <option className="text-[#5f7c7b]" value="Others">
+                Others
+              </option>
             </select>
-            <div className="text-[#192841]">Blog Title</div>
+            <div className="text-[#5f7c7b]">Blog Title</div>
             <input
               type="text"
               name="blogTitle"
               value={formData.blogTitle}
               onChange={handleChange}
-              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
+              className="rounded-lg border border-[#5f7c7b] p-2 bg-gray-200"
             />
           </div>
           <div className="flex flex-col gap-4 sm:ml-24 ml-0">
-            <div className="text-[#192841]">Blog image</div>
+            <div className="text-[#5f7c7b]">Blog image</div>
             <CldUploadWidget
               uploadPreset="hxuyyd1e"
               onSuccess={handleImageUpload}
@@ -122,25 +138,25 @@ function Blogform() {
                 <button
                   type="button"
                   onClick={() => open()}
-                  className="bg-[#192841] hover:bg-[#192841] text-white font-bold py-2 px-4 rounded"
+                  className="bg-[#5f7c7b] hover:bg-[#5f7c7b] text-white font-bold py-2 px-4 rounded"
                 >
                   Upload an Image
                 </button>
               )}
             </CldUploadWidget>
 
-            <div className="text-[#192841]">Blog Content</div>
+            <div className="text-[#5f7c7b]">Blog Content</div>
             <textarea
               name="blogContent"
               value={formData.blogContent}
               onChange={handleChange}
-              className="rounded-lg border border-[#192841] p-2 bg-gray-200"
+              className="rounded-lg border border-[#5f7c7b] p-2 bg-gray-200"
             ></textarea>
           </div>
         </div>
 
         <div className="flex justify-center">
-          <button className="bg-[#192841] text-white p-4 rounded-lg">
+          <button className="bg-[#5f7c7b] text-white p-4 rounded-lg">
             Publish
           </button>
         </div>

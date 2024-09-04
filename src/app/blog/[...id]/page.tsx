@@ -27,7 +27,7 @@ const page = async ({ params }: { params: { id: string } }) => {
           className="rounded-lg w-full sm:h-[500px] h-auto mr-8"
         />
         <div className="flex flex-col">
-          <div className="text-[#192841] text-3xl font-bold my-8">
+          <div className="text-[#24321c] text-3xl font-bold my-8">
             {blog.blogTitle}
           </div>
           <div className="flex flex-row mb-4 gap-4">
