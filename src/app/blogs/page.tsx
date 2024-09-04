@@ -48,10 +48,10 @@ export default function Page() {
       }
     };
 
-    updateVisibleSections(); // Initial check
-    window.addEventListener("resize", updateVisibleSections); // Update on resize
+    updateVisibleSections();
+    window.addEventListener("resize", updateVisibleSections);
 
-    return () => window.removeEventListener("resize", updateVisibleSections); // Cleanup on unmount
+    return () => window.removeEventListener("resize", updateVisibleSections);
   }, []);
 
   const [blogs, setBlogs] = useState([]);

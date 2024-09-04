@@ -23,8 +23,8 @@ const page = async ({ params }: { params: { id: string } }) => {
           src={blog.blogImage}
           alt="home"
           width={500}
-          height={500}
-          className="rounded-lg w-full mr-8"
+          height={300}
+          className="rounded-lg w-full sm:h-[500px] h-auto mr-8"
         />
         <div className="flex flex-col">
           <div className="text-[#192841] text-3xl font-bold my-8">
