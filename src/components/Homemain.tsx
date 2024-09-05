@@ -20,7 +20,7 @@ function Homemain() {
         <div className="text-lg font-bold mb-12">Inspire, Inform, Inigite</div>
         <div className="text-lg font-light mb-12">
           Here is the biggest collection of the best creative thoughts
-          <div className="">Just find the thought for your business.</div>
+          <div className=""> Describe the world in your eyes. </div>
         </div>
         <Link href="/createBlog">
           <button className="bg-white text-[#040326] px-4 py-2 rounded-lg mb-12">
