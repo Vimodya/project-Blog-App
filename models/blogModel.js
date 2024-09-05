@@ -22,6 +22,22 @@ const blogSchema = new mongoose.Schema({
     type: String,
     required: [true, "Please enter the blog image"],
   },
+  subTitle1: {
+    type: String,
+    required: [false],
+  },
+  description1: {
+    type: String,
+    required: [false],
+  },
+  subTitle2: {
+    type: String,
+    required: [false],
+  },
+  description2: {
+    type: String,
+    required: [false],
+  },
 });
 
 const Blog = mongoose.models.Blog || mongoose.model("Blog", blogSchema);

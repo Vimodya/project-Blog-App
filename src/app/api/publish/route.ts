@@ -6,11 +6,14 @@ export async function POST(req) {
   try {
     const {
       authorName,
-
       blogCategory,
       blogTitle,
       blogContent,
       blogImage,
+      subTitle1,
+      description1,
+      subTitle2,
+      description2,
     } = await req.json();
 
     console.log("Received data:", {
@@ -20,9 +23,12 @@ export async function POST(req) {
       blogTitle,
       blogContent,
       blogImage,
+      subTitle1,
+      description1,
+      subTitle2,
+      description2,
     });
 
-    // Ensure all required fields are present
     if (
       !authorName ||
       !blogCategory ||
@@ -38,7 +44,6 @@ export async function POST(req) {
 
     await connectMongoDB();
 
-    // Save the blog entry to the database
     const blog = new Blog({
       authorName,
 
@@ -46,13 +51,15 @@ export async function POST(req) {
       blogTitle,
       blogContent,
       blogImage,
+      subTitle1,
+      description1,
+      subTitle2,
+      description2,
     });
-
     const savedBlog = await blog.save();
 
     return NextResponse.json({ id: savedBlog._id }, { status: 201 });
   } catch (error) {
-    // Handle specific errors
     if (error.code === 11000) {
       console.error("Duplicate key error:", error);
       return NextResponse.json(

@@ -1,10 +1,10 @@
 import React from "react";
-import { Inter } from "next/font/google";
+import { EB_Garamond } from "next/font/google";
 import "./globals.css";
 import NavBar from "../components/navBar/NavBar";
 import { AuthProvider } from "./context/AuthProvider";
 
-const inter = Inter({ subsets: ["latin"] });
+const ebGaramond = EB_Garamond({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Next App",
@@ -18,7 +18,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-white `}>
+      <body className={`${ebGaramond.className} bg-white `}>
         <AuthProvider>
           <NavBar />
           {children}
