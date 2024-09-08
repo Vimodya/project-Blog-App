@@ -383,7 +383,7 @@ function Blogform() {
 
           {/* Blog Content */}
           <div className="col-span-2">
-            <label className="block text-[#5f7c7b]">Blog Content</label>
+            <label className="block text-[#5f7c7b]">Introduction</label>
             <textarea
               name="blogContent"
               value={formData.blogContent}
