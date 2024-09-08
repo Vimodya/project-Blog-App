@@ -114,7 +114,7 @@ export default function Page() {
           <div className="text-4xl font-semibold text-[#24321c] text-start my-8 ms-8">
             Latest Blogs
           </div>
-          <div className="flex flex-wrap ms-32 my-8 gap-24">
+          <div className="flex flex-wrap justify-center my-8 gap-24">
             {blogs.map((blog) => (
               <Blog
                 key={blog._id}

@@ -30,7 +30,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
 
         <div className="flex flex-col">
           {/* Blog Title */}
-          <div className="text-[#24321c] text-3xl font-bold my-8">
+          <div className="text-[#24321c] text-4xl text-center font-bold my-8">
             {blog.blogTitle}
           </div>
           {/* Author Info */}
@@ -51,10 +51,10 @@ const Page = async ({ params }: { params: { id: string } }) => {
             {blog.blogContent}
           </div>
 
-          {blog.subtitle1 && (
+          {blog.subTitle1 && (
             <div>
               <div className="text-[#24321c] text-2xl font-semibold mb-2">
-                {blog.subtitle1}
+                {blog.subTitle1}
               </div>
 
               <div className="text-[#192841] text-lg font-light mb-8">
@@ -64,10 +64,10 @@ const Page = async ({ params }: { params: { id: string } }) => {
           )}
 
           {/* Optional Subtitle 2 and Description 2 */}
-          {blog.subtitle2 && (
+          {blog.subTitle2 && (
             <div>
               <div className="text-[#24321c] text-2xl font-semibold mb-2">
-                {blog.subtitle2}
+                {blog.subTitle2}
               </div>
               <div className="text-[#192841] text-lg font-light mb-8">
                 {blog.description2}
